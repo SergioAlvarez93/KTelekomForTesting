@@ -1,0 +1,479 @@
+@import "nullstyle";
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Open Sans/OpenSans.eot");
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Open Sans/OpenSans.eot?#iefix")
+      format("embedded-opentype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Open Sans/OpenSans.woff2")
+      format("woff2"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Open Sans/OpenSans.woff")
+      format("woff"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Open Sans/OpenSans.ttf")
+      format("truetype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Open Sans/OpenSans.svg#OpenSans")
+      format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cera Bold";
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Bold.eot");
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Bold.woff2")
+      format("woff2"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Bold.woff")
+      format("woff"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Bold.ttf")
+      format("truetype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Bold.svg#CeraRoundProDEMO-Bold")
+      format("svg");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cera Medium";
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Medium.eot");
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Medium.eot?#iefix")
+      format("embedded-opentype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Medium.woff2")
+      format("woff2"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Medium.woff")
+      format("woff"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Medium.ttf")
+      format("truetype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Medium.svg#CeraRoundProDEMO-Medium")
+      format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cera Regular";
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Regular.eot");
+  src: url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Regular.woff2")
+      format("woff2"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Regular.woff")
+      format("woff"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Regular.ttf")
+      format("truetype"),
+    url("/wp-content/themes/ktelecomtesting/fonts/Cera Round Pro/CeraRoundProDEMO-Regular.svg#CeraRoundProDEMO-Regular")
+      format("svg");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@mixin cti() {
+  container-type: inline-size;
+}
+
+@function cqi($width, $min, $max) {
+  @return clamp($min * 1px, ($max * 100 / $width) * 1cqi, $max * 1px);
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.general-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex: 1;
+}
+
+.header {
+  @include cti();
+  padding: cqi(850, 8, 22) 0;
+  .container {
+    @include cti();
+  }
+}
+
+.container {
+  max-width: 920px;
+  padding: 0 10px;
+  margin: 0 auto;
+  &_slider {
+    padding: 0 0 0 10px;
+  }
+}
+.swiper {
+  padding: 25px;
+  margin: -25px;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.swiper-slide {
+  position: relative;
+  height: auto;
+  box-shadow: 0px 12px 25px 0px rgba(90, 90, 90, 0.12);
+}
+
+.pricing-card {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.logo {
+  width: cqi(900, 135, 147);
+  &__img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.general-btn {
+  display: inline-block;
+  padding: 15px 63px;
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: "Cera Medium";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 150%;
+  letter-spacing: 2%;
+  background: rgb(200, 16, 89);
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background-color: rgb(0, 153, 200);
+  }
+}
+
+.presentation {
+  background-color: rgb(242, 246, 248);
+  @include cti();
+  container-name: presentation;
+  padding: cqi(991, 12, 68) 0;
+}
+
+.presentation-flexbox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 10px;
+  @include cti();
+  container-name: presentation-flexbox;
+}
+
+.presentation-info {
+  flex: cqi(900, 300, 500) 0 0;
+  @include cti();
+  container-name: presentation-info;
+  &__title {
+    color: rgb(45, 45, 45);
+    font-family: "Cera Bold";
+    font-size: cqi(500, 20, 30);
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 2%;
+    margin-bottom: 10px;
+    white-space: pre-line;
+  }
+  &__list {
+    list-style-type: disc;
+    margin-bottom: 30px;
+  }
+  &__list-item {
+    list-style-type: disc;
+    color: rgb(85, 85, 85);
+    font-family: "Open Sans";
+    font-size: cqi(500, 13, 16);
+    font-weight: 400;
+    line-height: 200%;
+    letter-spacing: 2%;
+    margin-bottom: 15px;
+  }
+  &__btn {
+    font-size: cqi(500, 12, 14);
+  }
+}
+
+ul.presentation-info__list-item li {
+  list-style: disc;
+  &::marker {
+    color: rgb(85, 85, 85);
+  }
+}
+
+#ulWithDots {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.presention-img-wrap {
+  flex: cqi(900, 322.4, 377) 0 0;
+  &__item {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@container presentation (max-width: 767.2px) {
+  .presentation-flexbox {
+    justify-content: center;
+  }
+}
+
+@container presentation-flexbox (max-width: 747.2px) {
+  .presention-img-wrap {
+    order: 0;
+    flex: cqi(747, 226, 377) 0 0;
+  }
+  .presentation-info {
+    order: 1;
+    flex: 100% 0 1;
+    &__btn {
+      display: block;
+    }
+  }
+}
+
+.pricing {
+  @include cti();
+  padding: cqi(767, 35, 52) 0 cqi(767, 48, 83) 0;
+  container-name: pricing;
+  &__title {
+    color: rgb(45, 45, 45);
+    font-family: "Cera Medium";
+    font-size: cqi(767, 18, 28);
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 2%;
+    margin-bottom: cqi(767, 19, 33);
+  }
+}
+
+.pricing-card {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: 0px 12px 25px 0px rgba(90, 90, 90, 0.12);
+  padding: 30px;
+  &__title {
+    color: rgb(0, 0, 0);
+    font-family: "Cera Medium";
+    font-size: cqi(767, 18, 20);
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 2%;
+    margin-bottom: cqi(770, 5, 12.5);
+  }
+  &__subtitle {
+    color: rgb(172, 172, 172);
+    font-family: "Open Sans";
+    font-size: cqi(770, 10, 14);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 2%;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  &__speed {
+    color: rgb(200, 16, 89);
+    font-family: "Cera Medium";
+    font-size: cqi(770, 18, 25);
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 2%;
+    margin-bottom: 4.5px;
+  }
+  &__text {
+    color: rgb(85, 85, 85);
+    font-family: "Open Sans";
+    font-size: cqi(770, 12, 13);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 2%;
+    margin-bottom: cqi(770, 10, 24);
+  }
+  &__price {
+    color: rgb(45, 45, 45);
+    font-family: "Cera Bold";
+    font-size: cqi(770, 25, 40);
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: 2%;
+  }
+  &__period {
+    color: rgba(85, 85, 85, 0.5);
+    font-family: "Open Sans";
+    font-size: cqi(770, 14, 16);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 2%;
+    margin-left: 10px;
+  }
+  &__note {
+    color: rgba(85, 85, 85, 0.5);
+    font-family: "Open Sans";
+    font-size: cqi(770, 10, 12);
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: cqi(770, 10, 19);
+  }
+  &__btn {
+    display: block;
+    cursor: pointer;
+    font-size: cqi(767, 12, 14);
+    &::before {
+      content: "Выбрать тариф";
+    }
+  }
+}
+
+.active-btn {
+  display: block;
+  background-color: rgb(0, 153, 200);
+  &::before {
+    content: "Тариф выбран";
+  }
+}
+
+.checkbox-wrap__item {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: relative;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  background-color: #fff;
+  border: 2px solid rgba(45, 45, 45, 0.1);
+  border-radius: 2px;
+  margin-right: 10px;
+  pointer-events: none;
+}
+
+.checkbox-wrap:hover .checkbox-wrap__item ~ .checkmark {
+  background-color: #ddd;
+}
+
+.checkbox-wrap .checkbox-wrap__item:checked ~ .checkmark {
+  background-color: rgb(0, 153, 200);
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 4px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.checkbox-wrap .checkbox-wrap__item:checked ~ .checkmark:after {
+  display: block;
+}
+
+.pricing-card-inc-fb {
+  display: flex;
+  margin-bottom: cqi(770, 10, 20);
+}
+
+.pricing-card-include {
+  white-space: pre-line;
+  color: rgb(45, 45, 45);
+  font-family: "Cera Regular";
+  font-size: cqi(770, 12, 14);
+  font-weight: 400;
+  line-height: 150%;
+  letter-spacing: 2%;
+}
+
+@container pricing (max-width: 767.2px) {
+  .pricing-card {
+    padding: 20px 10px 20px 20px;
+    &__speed {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.footer {
+  @include cti();
+  container-name: footer;
+  padding-bottom: cqi(767, 0, 20);
+  .container {
+    padding-top: cqi(767, 17, 20);
+    padding-bottom: cqi(767, 17, 20);
+    border-top: 1px solid rgba(45, 45, 45, 0.1);
+    border-bottom: 1px solid rgba(45, 45, 45, 0.1);
+  }
+}
+
+.footer-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 60px;
+  &__text {
+    color: rgb(194, 194, 194);
+    font-family: "Cera Regular";
+    font-size: cqi(767, 12, 14);
+    font-weight: 400;
+    line-height: 150%;
+    letter-spacing: 2%;
+  }
+}
+
+.social-flexbox {
+  flex: 0 1 auto;
+  display: flex;
+  gap: 15px;
+  &__item {
+    display: flex;
+    width: cqi(767, 25, 30);
+    height: cqi(767, 25, 30);
+  }
+  &__item-img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@container footer (max-width: 767.2px) {
+  .social-flexbox {
+    gap: 20px;
+  }
+}

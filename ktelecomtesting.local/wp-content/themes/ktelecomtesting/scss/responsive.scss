@@ -1,0 +1,22 @@
+@media (max-width: 767.2px) {
+  .pricing-card {
+    &__btn {
+      &::before {
+        content: "Выбрать";
+      }
+    }
+  }
+
+  .active-btn {
+    &::before {
+      content: "Выбран";
+    }
+  }
+
+  .footer {
+    padding-bottom: 0;
+    .container {
+      border-bottom: none;
+    }
+  }
+}
