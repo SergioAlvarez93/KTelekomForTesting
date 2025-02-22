@@ -167,14 +167,14 @@ html {
   background-color: rgb(242, 246, 248);
   @include cti();
   container-name: presentation;
-  padding: cqi(991, 12, 68) 0;
+  padding: cqi(991, 12, 82) 0 cqi(991, 12, 50) 0;
 }
 
 .presentation-flexbox {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  column-gap: 10px;
+  column-gap: 6px;
   row-gap: 10px;
   @include cti();
   container-name: presentation-flexbox;
@@ -190,8 +190,8 @@ html {
     font-size: cqi(500, 20, 30);
     font-weight: 700;
     line-height: 150%;
-    letter-spacing: 2%;
-    margin-bottom: 10px;
+    letter-spacing: 0.7px;
+    margin-bottom: cqi(500, 10, 16);
     white-space: pre-line;
   }
   &__list {
@@ -199,34 +199,41 @@ html {
     margin-bottom: 30px;
   }
   &__list-item {
-    list-style-type: disc;
+    list-style-type: none;
     color: rgb(85, 85, 85);
     font-family: "Open Sans";
     font-size: cqi(500, 13, 16);
     font-weight: 400;
     line-height: 200%;
-    letter-spacing: 2%;
-    margin-bottom: 15px;
+    letter-spacing: 0.32px;
   }
   &__btn {
     font-size: cqi(500, 12, 14);
+    padding-top: 13px;
+    padding-bottom: 13px;
   }
 }
 
-ul.presentation-info__list-item li {
-  list-style: disc;
-  &::marker {
+ul.presentation-info__list li {
+  position: relative;
+  &::before {
+    content: "•";
     color: rgb(85, 85, 85);
+    font-size: 16px;
+    position: absolute;
+    left: -15px;
+    width: 10px;
   }
 }
 
 #ulWithDots {
-  list-style: disc;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 .presention-img-wrap {
-  flex: cqi(900, 322.4, 377) 0 0;
+  flex: cqi(900, 322.4, 392) 0 0;
+  position: relative;
+  top: -15px;
   &__item {
     max-width: 100%;
     height: auto;
@@ -241,6 +248,7 @@ ul.presentation-info__list-item li {
 
 @container presentation-flexbox (max-width: 747.2px) {
   .presention-img-wrap {
+    top: 0;
     order: 0;
     flex: cqi(747, 226, 377) 0 0;
   }
@@ -256,6 +264,7 @@ ul.presentation-info__list-item li {
 .pricing {
   @include cti();
   padding: cqi(767, 35, 52) 0 cqi(767, 48, 83) 0;
+  overflow: hidden;
   container-name: pricing;
   &__title {
     color: rgb(45, 45, 45);
@@ -413,12 +422,24 @@ ul.presentation-info__list-item li {
   letter-spacing: 2%;
 }
 
+.pricing .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next) {
+  opacity: 0.3;
+}
+
 @container pricing (max-width: 767.2px) {
   .pricing-card {
     padding: 20px 10px 20px 20px;
     &__speed {
       margin-bottom: 10px;
     }
+  }
+
+  .swiper-slide:not(.swiper-slide-active):not(.swiper-slide-next) {
+    opacity: 1;
+  }
+
+  .swiper-slide-next {
+    opacity: 0.3;
   }
 }
 
